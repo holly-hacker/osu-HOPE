@@ -34,6 +34,9 @@ namespace Hope.Plugin.Example2
                 switch (packet.Type)
                 {
                     case PacketType.ServerMainMenuNews:
+                        //note: this will not inject the packet, only modify it
+                        //if you want to always show a custom news title, see 
+                        //the code for injecting a channel.
                         BanchoString bs = new BanchoString();
                         bs.Populate(packet.Data);
                         Debug.WriteLine("Bancho Title Update: " + bs.Value);
@@ -46,7 +49,7 @@ namespace Hope.Plugin.Example2
             if (!_injectedChannel) {
                 plist.Add(new BanchoPacket(PacketType.ServerChatChannelAvailableAutojoin,
                     new BanchoChatChannel {
-                        Name = "#admin",
+                        Name = "#osu!HOPE",
                         Topic = "Raple is cute",
                         UserCount = 1337
                     }));

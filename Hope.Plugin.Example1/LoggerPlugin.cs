@@ -51,7 +51,7 @@ namespace Hope.Plugin.Example1
                 PrintPacketDescription(packet);
         }
 
-        private void PrintPacketDescription(BanchoPacket packet)
+        private static void PrintPacketDescription(BanchoPacket packet)
         {
             //write in front of every line
             Console.Write(" * ");
