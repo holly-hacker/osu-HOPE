@@ -20,11 +20,11 @@ namespace Hope.Plugin.ExtensiveExample
         private readonly MultiplayerScoreSpam _mss = new MultiplayerScoreSpam();
 
         //bad way to do it, but I had to add
-        private bool _mpInviteGenerator = true;
+        private bool _mpInviteGenerator = false;
         private bool _mpScoreSpam = false;
-        private bool _spectateCorrupt = true;
-        private bool _customAction = true;
-        private bool _peppy = true;
+        private bool _spectateCorrupt = false;
+        private bool _customAction = false;
+        private bool _peppy = false;
         private bool _peopleAreWeird = false;
 
         public PluginMetadata GetMetadata()
@@ -185,9 +185,7 @@ namespace Hope.Plugin.ExtensiveExample
                     _packetQueueReceive.Enqueue(new BanchoPacket(PacketType.ServerNotification, new BanchoString() { Value = arguments }));
                     break;
                 case "toggle":
-                    //TODO: broken fix me :(
-                    if (string.IsNullOrEmpty(arguments)) {
-                        SendMessage("too lazy to give a help list. Use !toggle [what]");
+                    if (!string.IsNullOrEmpty(arguments)) {
                         switch (arguments)
                         {
                             case "invite":
@@ -214,8 +212,9 @@ namespace Hope.Plugin.ExtensiveExample
                         }
 
                         SendMessage("Toggled.", msg.Channel);
-                        return;
                     }
+                    else
+                        SendMessage("too lazy to give a help list. Use !toggle [what]");
                     break;
             }
         }
