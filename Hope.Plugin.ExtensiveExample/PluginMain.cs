@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using Hope.Plugin.ExtensiveExample.Modules;
 using HOPEless.Bancho;
 using HOPEless.Bancho.Objects;
 using HOPEless.Extensions;
@@ -110,6 +111,7 @@ namespace Hope.Plugin.ExtensiveExample
                             var msg = new BanchoChatMessage();
                             msg.Populate(packet.Data);
                             var rand = new Random((int)DateTime.Now.Ticks);
+                            //yes, this is horrible and yes, it will stay
                             msg.Message = string.Join(" ", msg.Message.Split(' ').Select(a => new[] { "dick", "wang", "fuck a duck", "fuck a donkey", "cocks" }[rand.Next(5)]));
                             //msg.Message = "No quote found. Wow, talk more, losers. (Syntax: .quote [#|nick|add|remove] [\"quote\"|#] [- nick])";
                             packet.Data = msg.Serialize();

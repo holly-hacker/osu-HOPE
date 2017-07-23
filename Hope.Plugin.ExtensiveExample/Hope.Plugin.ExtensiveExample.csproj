@@ -33,19 +33,15 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MultiplayerInviteGenerator.cs" />
-    <Compile Include="MultiplayerScoreSpam.cs" />
+    <Compile Include="Modules\MultiplayerInviteGenerator.cs" />
+    <Compile Include="Modules\MultiplayerScoreSpam.cs" />
     <Compile Include="PluginMain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SpectatorCorrupter.cs" />
+    <Compile Include="Modules\SpectatorCorrupter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HOPEless\HOPEless\HOPEless.csproj">
