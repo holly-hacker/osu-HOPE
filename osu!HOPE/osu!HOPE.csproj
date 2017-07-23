@@ -47,12 +47,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
     <Reference Include="Titanium.Web.Proxy, Version=3.0.38.0, Culture=neutral, PublicKeyToken=8e41e1f1c790d7cf, processorArchitecture=MSIL">
       <HintPath>..\packages\Titanium.Web.Proxy.3.0.38\lib\net45\Titanium.Web.Proxy.dll</HintPath>
     </Reference>

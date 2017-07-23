@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using osu_HOPE.Plugin;
 
 namespace osu_HOPE.PluginManagement

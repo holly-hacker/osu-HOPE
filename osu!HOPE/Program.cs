@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
@@ -38,7 +37,7 @@ namespace osu_HOPE
 
             Console.WriteLine("Preparing proxy server...");
             var proxyServer = new ProxyServer();
-            proxyServer.TrustRootCertificate = true;
+            proxyServer.TrustRootCertificate = true;    //this is needed for decrypting SSL traffic
             proxyServer.BeforeRequest += OnRequest;
             proxyServer.BeforeResponse += OnResponse;
 
@@ -132,14 +131,6 @@ namespace osu_HOPE
                         Debug.WriteLine($"Exception occured in plugin {plugin.GetMetadata().Name} OnBanchoRequest: " + exception);
                     }
                 }
-
-                /*foreach (BanchoPacket packet in plist) {
-                    if (packet.Type == PacketType.ServerMultiMatchNew) {
-                        var m = new BanchoMultiplayerMatch();
-                        m.Populate(packet.Data);
-                        Console.WriteLine($"Bancho match info: name=\"{m.GameName}\", pass=\"{m.GamePassword}\"");
-                    }
-                }*/
 
                 byte[] bodySerialized = BanchoSerializer.Serialize(plist);
                 await e.SetResponseBody(bodySerialized);
